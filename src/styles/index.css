@@ -18,6 +18,7 @@ a {
 }
 
 .header {
+  margin-bottom: 120px;
   /* background-color: purple; */
 }
 
@@ -97,4 +98,50 @@ a {
 .authImg {
   width: 3vw;
   height: 5vh;
+}
+
+/*-----------------------------MOVIES------------------------------------*/
+
+/* .movies {
+} */
+
+.movies__container {
+  margin-bottom: 5em;
+}
+
+.movies__title {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.movies__items {
+  display: flex;
+  gap: 20px;
+  /* flex: 1; */
+}
+/* .movies__items::-webkit-scrollbar {
+  display: none;
+} */
+
+/* .movies__item {
+  flex: 1;
+} */
+
+.item_img {
+  width: 400px;
+  height: 230px;
+  border: #f2f2f2 solid 2px;
+  overflow: hidden;
+  border-radius: 20px;
+  margin-bottom: 2vh;
+}
+
+.ii-img {
+  width: 100%;
+  height: 100%;
+}
+
+.item_name {
+  font-size: 20px;
+  /* text-align: center; */
 }

@@ -4,7 +4,7 @@ import Search from './Search'
 
 const Header = () => {
   return (
-    <div className="header">
+    <header className="header">
       <div className="container">
         <div className="header__container">
           <div className="first">
@@ -17,7 +17,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-    </div>
+    </header>
   )
 }
 

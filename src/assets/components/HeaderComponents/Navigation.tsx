@@ -1,22 +1,24 @@
 const Navigation = () => {
   return (
-    <ul className="navigation">
-      <li className="navItem">
-        <a href="#" className="navLink">
-          Фильмы
-        </a>
-      </li>
-      <li className="navItem">
-        <a href="#" className="navLink">
-          Сериалы
-        </a>
-      </li>
-      <li className="navItem">
-        <a href="#" className="navLink">
-          Мультфильмы
-        </a>
-      </li>
-    </ul>
+    <nav>
+      <ul className="navigation">
+        <li className="navItem">
+          <a href="#" className="navLink">
+            Фильмы
+          </a>
+        </li>
+        <li className="navItem">
+          <a href="#" className="navLink">
+            Сериалы
+          </a>
+        </li>
+        <li className="navItem">
+          <a href="#" className="navLink">
+            Мультфильмы
+          </a>
+        </li>
+      </ul>
+    </nav>
   )
 }
 
