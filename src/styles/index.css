@@ -160,23 +160,11 @@ a {
   gap: 20px;
   overflow-x: auto;
   padding-left: 55px;
+  padding-right: 55px;
   position: relative;
+  scroll-behavior: smooth;
   /* flex: 1; */
 }
-
-/* .movies__items:hover::after {
-  content: 'loxxxxx';
-  position: absolute;
-  top: 100px;
-  right: 10px;
-} */
-
-/* .movies__items::after {
-  content: 'loxxxxx';
-  position: absolute;
-  top: 100px;
-  right: 10px;
-} */
 
 .movies__items::-webkit-scrollbar {
   display: none;

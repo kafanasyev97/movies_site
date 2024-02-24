@@ -2,8 +2,10 @@ import { useRef } from 'react'
 import MoviesSlider from './MoviesSlider'
 
 const Movies = () => {
-  let arrowLeft = useRef<HTMLDivElement>(null)
-  let arrowRight = useRef<HTMLDivElement>(null)
+  const arrowLeft = useRef<HTMLDivElement>(null)
+  const arrowRight = useRef<HTMLDivElement>(null)
+
+  const sliderRef = useRef<HTMLDivElement>(null)
 
   const viewScroll = () => {
     if (arrowLeft.current && arrowRight.current) {
@@ -12,30 +14,44 @@ const Movies = () => {
     }
   }
 
-  const removeScroll = () => {
+  const hideScroll = () => {
     if (arrowLeft.current && arrowRight.current) {
       arrowLeft.current.style.display = 'none'
       arrowRight.current.style.display = 'none'
     }
   }
 
+  const nextSlide = () => {
+    if (!sliderRef.current) return
+    sliderRef.current.scrollLeft += 420
+  }
+
+  const prevSlide = () => {
+    if (!sliderRef.current) return
+    sliderRef.current.scrollLeft -= 420
+  }
+
   return (
     <article className="movies">
       <div
-        onMouseLeave={removeScroll}
+        onMouseLeave={hideScroll}
         onMouseMove={viewScroll}
         className="movies__container"
       >
-        <div ref={arrowLeft} className="movies__hover-left">
+        <div onClick={prevSlide} ref={arrowLeft} className="movies__hover-left">
           <img src="./images/left.png" alt="left" />
         </div>
-        <div ref={arrowRight} className="movies__hover-right">
+        <div
+          onClick={nextSlide}
+          ref={arrowRight}
+          className="movies__hover-right"
+        >
           <img src="./images/right.png" alt="right" />
         </div>
         <div className="movies__title">
           <b>Фильмы</b>
         </div>
-        <MoviesSlider />
+        <MoviesSlider sliderRef={sliderRef} />
       </div>
     </article>
   )
