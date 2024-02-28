@@ -1,7 +1,11 @@
 import { useRef } from 'react'
 import MoviesSlider from './MoviesSlider'
 
-const Movies = () => {
+type Props = {
+  name: string
+}
+
+const Movies = ({ name }: Props) => {
   const arrowLeft = useRef<HTMLDivElement>(null)
   const arrowRight = useRef<HTMLDivElement>(null)
 
@@ -49,7 +53,7 @@ const Movies = () => {
           <img src="./images/right.png" alt="right" />
         </div>
         <div className="movies__title">
-          <b>Фильмы</b>
+          <b>{name}</b>
         </div>
         <MoviesSlider sliderRef={sliderRef} />
       </div>

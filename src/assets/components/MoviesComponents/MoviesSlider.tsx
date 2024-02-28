@@ -1,6 +1,11 @@
+import { RefObject } from 'react'
 import MoviesItem from './MoviesItem'
 
-const MoviesSlider = (props: any) => {
+type Props = {
+  sliderRef: RefObject<HTMLDivElement>
+}
+
+const MoviesSlider = (props: Props) => {
   return (
     <div ref={props.sliderRef} className="movies__items">
       <MoviesItem />
@@ -19,27 +24,3 @@ const MoviesSlider = (props: any) => {
 }
 
 export default MoviesSlider
-
-// import MoviesItem from './MoviesItem'
-// import { forwardRef } from 'react'
-
-// const MoviesSlider = forwardRef(function MoviesSlider(props: any, ref) {
-//   console.log('vvvvvvvvvvvvvvv', ref)
-
-//   return (
-//     <div ref={props.ref} className="movies__items">
-//       <MoviesItem />
-//       <MoviesItem />
-//       <MoviesItem />
-//       <MoviesItem />
-//       <MoviesItem />
-//       <MoviesItem />
-//       <MoviesItem />
-//       <MoviesItem />
-//       <MoviesItem />
-//       <MoviesItem />
-//     </div>
-//   )
-// })
-
-// export default MoviesSlider

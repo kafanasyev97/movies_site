@@ -1,14 +1,12 @@
 import React from 'react'
 import Header from './assets/components/HeaderComponents/Header'
-import Movies from './assets/components/MoviesComponents/Movies'
+import StartPageItems from './assets/components/MoviesComponents/StartPageItems'
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <Movies />
-      <Movies />
-      <Movies />
+      <StartPageItems />
     </div>
   )
 }
