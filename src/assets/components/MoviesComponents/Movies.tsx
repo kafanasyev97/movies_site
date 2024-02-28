@@ -1,11 +1,13 @@
 import { useRef } from 'react'
 import MoviesSlider from './MoviesSlider'
+import { VideoItem } from './ItemsList'
 
 type Props = {
+  items: VideoItem[]
   name: string
 }
 
-const Movies = ({ name }: Props) => {
+const Movies = ({ name, items }: Props) => {
   const arrowLeft = useRef<HTMLDivElement>(null)
   const arrowRight = useRef<HTMLDivElement>(null)
 
@@ -55,7 +57,7 @@ const Movies = ({ name }: Props) => {
         <div className="movies__title">
           <b>{name}</b>
         </div>
-        <MoviesSlider sliderRef={sliderRef} />
+        <MoviesSlider items={items} sliderRef={sliderRef} />
       </div>
     </article>
   )

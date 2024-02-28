@@ -1,4 +1,13 @@
-export const movies = [
+export type VideoItem = {
+  id: number | string
+  name: string
+  imagePath: string
+  year: number | string
+  description: string
+  genre?: string
+}
+
+export const movies: VideoItem[] = [
   {
     id: 1,
     name: 'Железный человек',
@@ -100,7 +109,7 @@ export const movies = [
   },
 ]
 
-export const serials = [
+export const serials: VideoItem[] = [
   {
     id: 1,
     name: 'Ходячие мертвецы',
@@ -202,7 +211,7 @@ export const serials = [
   },
 ]
 
-export const cartoons = [
+export const cartoons: VideoItem[] = [
   {
     id: 1,
     name: 'История игрушек',
