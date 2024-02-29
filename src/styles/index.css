@@ -170,9 +170,8 @@ a {
   display: none;
 }
 
-.movies__item {
-  flex: 1;
-}
+/* .movies__item {
+} */
 
 .item_img {
   width: 400px;
@@ -191,4 +190,12 @@ a {
 .item_name {
   font-size: 20px;
   /* text-align: center; */
+}
+
+/*-----------------------------MOVIES-PAGE------------------------------------*/
+
+.movies-page-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }

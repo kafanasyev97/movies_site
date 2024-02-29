@@ -1,21 +1,23 @@
+import { Link } from 'react-router-dom'
+
 const Navigation = () => {
   return (
     <nav>
       <ul className="navigation">
         <li className="navItem">
-          <a href="#" className="navLink">
+          <Link to="/movies" className="navLink">
             Фильмы
-          </a>
+          </Link>
         </li>
         <li className="navItem">
-          <a href="#" className="navLink">
+          <Link to="/serials" className="navLink">
             Сериалы
-          </a>
+          </Link>
         </li>
         <li className="navItem">
-          <a href="#" className="navLink">
+          <Link to="/cartoons" className="navLink">
             Мультфильмы
-          </a>
+          </Link>
         </li>
       </ul>
     </nav>
@@ -23,23 +25,3 @@ const Navigation = () => {
 }
 
 export default Navigation
-
-{
-  /* <div className="navigation">
-      <div className="navItem">
-        <a href="#" className="navLink">
-          Фильмы
-        </a>
-      </div>
-      <div className="navItem">
-        <a href="#" className="navLink">
-          Сериалы
-        </a>
-      </div>
-      <div className="navItem">
-        <a href="#" className="navLink">
-          Мультфильмы
-        </a>
-      </div>
-    </div> */
-}

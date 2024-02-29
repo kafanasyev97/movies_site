@@ -1,13 +1,16 @@
 import { useRef } from 'react'
 import MoviesSlider from './MoviesSlider'
 import { VideoItem } from './ItemsList'
+import { Link } from 'react-router-dom'
 
 type Props = {
   items: VideoItem[]
   name: string
+  url: string
 }
 
-const Movies = ({ name, items }: Props) => {
+const Movies = ({ name, items, url }: Props) => {
+  const urlPath = `/${url}`
   const arrowLeft = useRef<HTMLDivElement>(null)
   const arrowRight = useRef<HTMLDivElement>(null)
 
@@ -55,7 +58,9 @@ const Movies = ({ name, items }: Props) => {
           <img src="./images/right.png" alt="right" />
         </div>
         <div className="movies__title">
-          <b>{name}</b>
+          <Link to={urlPath} className="navLink">
+            <b>{name}</b>
+          </Link>
         </div>
         <MoviesSlider items={items} sliderRef={sliderRef} />
       </div>
