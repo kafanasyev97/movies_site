@@ -5,6 +5,7 @@ import MoviesPage from './assets/pages/MoviesPage'
 import SerialsPage from './assets/pages/SerialsPage'
 import CartoonsPage from './assets/pages/CartoonsPage'
 import Header from './assets/components/HeaderComponents/Header'
+import ItemPage from './assets/pages/ItemPage'
 
 function App() {
   return (
@@ -13,9 +14,13 @@ function App() {
         <Route path="/" element={<Header />}>
           <Route index element={<MainPage />} />
           <Route path="movies" element={<MoviesPage />} />
+          <Route path="/:category/:id" element={<ItemPage />} />
+
           <Route path="serials" element={<SerialsPage />} />
+
           <Route path="cartoons" element={<CartoonsPage />} />
         </Route>
+        <Route path="*" element={<div>Error</div>} />
       </Routes>
     </BrowserRouter>
   )

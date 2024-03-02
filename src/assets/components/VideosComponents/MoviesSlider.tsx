@@ -12,11 +12,13 @@ const MoviesSlider = (props: Props) => {
     <div ref={props.sliderRef} className="movies__items">
       {props.items.map((item) => (
         <MoviesItem
+          id={item.id}
           key={item.id}
           name={item.name}
           year={item.year}
           path={item.imagePath}
           genre={item.genre}
+          category={item.category}
         />
       ))}
     </div>
