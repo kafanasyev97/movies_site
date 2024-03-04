@@ -20,12 +20,16 @@ const ItemPage = () => {
   console.log(imagePath)
 
   return (
-    <div className="movies__item">
-      <div className="item_img">
-        <img className="ii-img" src={imagePath} alt="iron-man" />
-      </div>
-      <div className="item_name">
-        {name}: {genre} ({year}){description}
+    <div className="item-page">
+      <div className="container">
+        <div className="item-page__block-img">
+          <img className="item-page__img" src={imagePath} alt="iron-man" />
+        </div>
+        <div className="item-page__main-info">
+          {name} ({year})
+        </div>
+        <div className="item-page__main-info">{genre}</div>
+        <div className="item-page__description">{description}</div>
       </div>
     </div>
   )

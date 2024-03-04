@@ -170,6 +170,10 @@ a {
   display: none;
 }
 
+.link-item {
+  color: inherit;
+}
+
 /* .movies__item {
 } */
 
@@ -198,4 +202,28 @@ a {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+/*-----------------------------ITEMPAGE------------------------------------*/
+
+.item-page__block-img {
+  padding-bottom: 30px;
+}
+
+.item-page__img {
+  display: block;
+  margin: 0 auto;
+  width: 1200px;
+  height: 600px;
+}
+
+.item-page__main-info {
+  font-size: 30px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+}
+
+.item-page__description {
+  font-size: 20px;
+  padding-left: 30px;
 }

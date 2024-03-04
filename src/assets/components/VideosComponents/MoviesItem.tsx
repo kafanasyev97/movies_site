@@ -16,7 +16,7 @@ const MoviesItem = ({ id, name, path, genre, year, category }: Props) => {
   else url = 'cartoons'
 
   return (
-    <Link to={`/${url}/${id}`}>
+    <Link className="link-item" to={`/${url}/${id}`}>
       <div className="movies__item">
         <div className="item_img">
           <img className="ii-img" src={path} alt="iron-man" />
