@@ -17,7 +17,6 @@ const ItemPage = () => {
   const item = items.find((el) => el.id === parseInt(id))
   if (!item) return null
   const { name, imagePath, genre, year, description } = item
-  console.log(imagePath)
 
   return (
     <div className="item-page">
