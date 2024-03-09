@@ -7,20 +7,30 @@ const StartPageItems = () => {
   const serialsURL = 'http://localhost:3001/serials'
   const cartoonsURL = 'http://localhost:3001/cartoons'
 
-  const getData = async (url: string, func: any) => {
+  const getData = async (url: string, setFunc: any) => {
     const { data } = await axios.get(url)
-    func(data)
+    setFunc(data)
   }
 
   const [movies, setMovies] = useState([])
   const [serials, setSerials] = useState([])
   const [cartoons, setCartoons] = useState([])
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
-    getData(moviesURL, setMovies)
-    getData(serialsURL, setSerials)
-    getData(cartoonsURL, setCartoons)
+    const fetchData = async () => {
+      await getData(moviesURL, setMovies)
+      await getData(serialsURL, setSerials)
+      await getData(cartoonsURL, setCartoons)
+      setLoading(true)
+    }
+
+    fetchData()
   }, [])
+
+  if (!loading) {
+    return null
+  }
   return (
     <div>
       <Suspense fallback={<h1>LOADING!!!</h1>}>
