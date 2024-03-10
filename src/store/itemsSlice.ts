@@ -1,11 +1,12 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import axios from 'axios'
 import { Item, ItemList } from '../types/types'
+import { MOVIES_URL, SERIALS_URL, CARTOONS_URL } from './urls'
 
 export const fetchMovies = createAsyncThunk<Item[], void>(
   'items/fetchMovies',
   async function () {
-    const { data } = await axios.get('http://localhost:3001/movies')
+    const { data } = await axios.get(MOVIES_URL)
     return data
   }
 )
@@ -13,7 +14,7 @@ export const fetchMovies = createAsyncThunk<Item[], void>(
 export const fetchSerials = createAsyncThunk<Item[], void>(
   'items/fetchSerials',
   async function () {
-    const { data } = await axios.get('http://localhost:3001/serials')
+    const { data } = await axios.get(SERIALS_URL)
     return data
   }
 )
@@ -21,7 +22,7 @@ export const fetchSerials = createAsyncThunk<Item[], void>(
 export const fetchCartoons = createAsyncThunk<Item[], void>(
   'items/fetchCartoons',
   async function () {
-    const { data } = await axios.get('http://localhost:3001/cartoons')
+    const { data } = await axios.get(CARTOONS_URL)
     return data
   }
 )
