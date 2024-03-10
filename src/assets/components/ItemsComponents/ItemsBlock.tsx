@@ -1,15 +1,15 @@
 import { useRef } from 'react'
-import MoviesSlider from './MoviesSlider'
-import { VideoItem } from './ItemsList'
+import MoviesSlider from './ItemsSlider'
+import { Item } from '../../../types/types'
 import { Link } from 'react-router-dom'
 
 type Props = {
-  items: VideoItem[]
+  items: Item[]
   name: string
   url: string
 }
 
-const Movies = ({ name, items, url }: Props) => {
+const Items: React.FC<Props> = ({ name, items, url }) => {
   const urlPath = `/${url}`
   const arrowLeft = useRef<HTMLDivElement>(null)
   const arrowRight = useRef<HTMLDivElement>(null)
@@ -68,4 +68,4 @@ const Movies = ({ name, items, url }: Props) => {
   )
 }
 
-export default Movies
+export default Items

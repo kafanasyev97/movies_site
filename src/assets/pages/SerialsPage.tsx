@@ -1,7 +1,9 @@
-import { serials } from '../components/VideosComponents/ItemsList'
-import MoviesItem from '../components/VideosComponents/MoviesItem'
+import { useAppSelector } from '../../store/hooks'
+import MoviesItem from '../components/ItemsComponents/MoviesItem'
 
 const SerialsPage = () => {
+  const serials = useAppSelector((state) => state.items.serials)
+
   return (
     <div className="container">
       <div className="movies-page-items">
@@ -11,7 +13,7 @@ const SerialsPage = () => {
             key={item.id}
             name={item.name}
             year={item.year}
-            path={item.imagePath}
+            imagePath={item.imagePath}
             genre={item.genre}
             category={item.category}
           />

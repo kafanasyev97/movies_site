@@ -1,7 +1,8 @@
-import { cartoons } from '../components/VideosComponents/ItemsList'
-import MoviesItem from '../components/VideosComponents/MoviesItem'
+import MoviesItem from '../components/ItemsComponents/MoviesItem'
+import { useAppSelector } from '../../store/hooks'
 
 const CartoonsPage = () => {
+  const cartoons = useAppSelector((state) => state.items.cartoons)
   return (
     <div className="container">
       <div className="movies-page-items">
@@ -11,7 +12,7 @@ const CartoonsPage = () => {
             key={item.id}
             name={item.name}
             year={item.year}
-            path={item.imagePath}
+            imagePath={item.imagePath}
             genre={item.genre}
             category={item.category}
           />

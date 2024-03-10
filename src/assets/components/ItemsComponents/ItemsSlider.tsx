@@ -1,13 +1,13 @@
 import { RefObject } from 'react'
 import MoviesItem from './MoviesItem'
-import { VideoItem } from './ItemsList'
+import { Item } from '../../../types/types'
 
 type Props = {
-  items: VideoItem[]
+  items: Item[]
   sliderRef: RefObject<HTMLDivElement>
 }
 
-const MoviesSlider = (props: Props) => {
+const ItemsSlider = (props: Props) => {
   return (
     <div ref={props.sliderRef} className="movies__items">
       {props.items.map((item) => (
@@ -16,7 +16,7 @@ const MoviesSlider = (props: Props) => {
           key={item.id}
           name={item.name}
           year={item.year}
-          path={item.imagePath}
+          imagePath={item.imagePath}
           genre={item.genre}
           category={item.category}
         />
@@ -25,4 +25,4 @@ const MoviesSlider = (props: Props) => {
   )
 }
 
-export default MoviesSlider
+export default ItemsSlider

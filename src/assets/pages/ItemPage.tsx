@@ -3,7 +3,7 @@ import {
   movies,
   serials,
   cartoons,
-} from '../components/VideosComponents/ItemsList'
+} from '../components/ItemsComponents/ItemsList'
 
 const ItemPage = () => {
   const { id, category } = useParams()
