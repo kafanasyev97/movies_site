@@ -6,6 +6,7 @@ import SerialsPage from './assets/pages/SerialsPage'
 import CartoonsPage from './assets/pages/CartoonsPage'
 import Header from './assets/components/HeaderComponents/Header'
 import ItemPage from './assets/pages/ItemPage'
+import ErrorPage from './assets/pages/ErrorPage'
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
 
           <Route path="cartoons" element={<CartoonsPage />} />
         </Route>
-        <Route path="*" element={<div>Error</div>} />
+        <Route path="*" element={<ErrorPage />} /> / исправить
       </Routes>
     </BrowserRouter>
   )

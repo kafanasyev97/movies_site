@@ -1,21 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import axios from 'axios'
-
-export type Item = {
-  id: number | string
-  name: string
-  imagePath: string
-  year: number | string
-  description: string
-  category: string
-  genre?: string
-}
-
-export type ItemList = {
-  movies: Item[]
-  serials: Item[]
-  cartoons: Item[]
-}
+import { Item, ItemList } from '../types/types'
 
 export const fetchMovies = createAsyncThunk<Item[], void>(
   'items/fetchMovies',

@@ -1,5 +1,5 @@
 import { RefObject } from 'react'
-import MoviesItem from './MoviesItem'
+import MoviesItem from './Item'
 import { Item } from '../../../types/types'
 
 type Props = {

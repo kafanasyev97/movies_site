@@ -1,5 +1,5 @@
 import { useRef } from 'react'
-import MoviesSlider from './ItemsSlider'
+import ItemsSlider from './ItemsSlider'
 import { Item } from '../../../types/types'
 import { Link } from 'react-router-dom'
 
@@ -62,7 +62,7 @@ const Items: React.FC<Props> = ({ name, items, url }) => {
             <b>{name}</b>
           </Link>
         </div>
-        <MoviesSlider items={items} sliderRef={sliderRef} />
+        <ItemsSlider items={items} sliderRef={sliderRef} />
       </div>
     </article>
   )

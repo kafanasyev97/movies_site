@@ -1,11 +1,11 @@
 import { useParams } from 'react-router-dom'
-import {
-  movies,
-  serials,
-  cartoons,
-} from '../components/ItemsComponents/ItemsList'
+import { useAppSelector } from '../../store/hooks'
 
 const ItemPage = () => {
+  const movies = useAppSelector((state) => state.items.movies)
+  const serials = useAppSelector((state) => state.items.serials)
+  const cartoons = useAppSelector((state) => state.items.cartoons)
+
   const { id, category } = useParams()
   if (!id) return null
 
@@ -14,7 +14,8 @@ const ItemPage = () => {
   else if (category === 'serials') items = serials
   else items = cartoons
 
-  const item = items.find((el) => el.id === parseInt(id))
+  const item = items.find((el) => el.id === id)
+
   if (!item) return null
   const { name, imagePath, genre, year, description } = item
 

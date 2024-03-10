@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom'
-import { Item } from '../../../types/types'
+import { Item as ItemType } from '../../../types/types'
 
-type Props = Omit<Item, 'description'>
+type Props = Omit<ItemType, 'description'>
 
-const MoviesItem = ({ id, name, imagePath, genre, year, category }: Props) => {
+const Item = ({ id, name, imagePath, genre, year, category }: Props) => {
   let url
   if (category === 'Фильмы') url = 'movies'
   else if (category === 'Сериалы') url = 'serials'
@@ -13,7 +13,7 @@ const MoviesItem = ({ id, name, imagePath, genre, year, category }: Props) => {
     <Link className="link-item" to={`/${url}/${id}`}>
       <div className="movies__item">
         <div className="item_img">
-          <img className="ii-img" src={imagePath} alt="iron-man" />
+          <img className="ii-img" src={imagePath} alt={name} />
         </div>
         <div className="item_name">
           {name}: {genre} ({year})
@@ -23,4 +23,4 @@ const MoviesItem = ({ id, name, imagePath, genre, year, category }: Props) => {
   )
 }
 
-export default MoviesItem
+export default Item

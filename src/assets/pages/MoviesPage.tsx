@@ -1,5 +1,5 @@
 import { useAppSelector } from '../../store/hooks'
-import MoviesItem from '../components/ItemsComponents/MoviesItem'
+import Item from '../components/ItemsComponents/Item'
 
 const MoviesPage = () => {
   const movies = useAppSelector((state) => state.items.movies)
@@ -8,7 +8,7 @@ const MoviesPage = () => {
     <div className="container">
       <div className="movies-page-items">
         {movies.map((item) => (
-          <MoviesItem
+          <Item
             id={item.id}
             key={item.id}
             name={item.name}

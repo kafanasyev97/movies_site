@@ -27,7 +27,7 @@ const MainPage = () => {
   }
 
   return (
-    <div className="App">
+    <div>
       <MainPageItems />
     </div>
   )
