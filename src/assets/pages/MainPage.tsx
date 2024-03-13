@@ -6,6 +6,7 @@ import {
   fetchSerials,
 } from '../../store/itemsSlice'
 import MainPageItems from '../components/ItemsComponents/MainPageItems'
+import Footer from '../components/FooterComponents/Footer'
 
 const MainPage = () => {
   const dispatch = useAppDispatch()
@@ -29,6 +30,7 @@ const MainPage = () => {
   return (
     <div>
       <MainPageItems />
+      <Footer />
     </div>
   )
 }

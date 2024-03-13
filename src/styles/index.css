@@ -204,6 +204,31 @@ a {
   justify-content: space-between;
 }
 
+.footer {
+  background-color: #211f1e;
+}
+
+.footer__text {
+  margin: 0;
+}
+
+.footer__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 3vh;
+  font-size: 20px;
+  margin-bottom: 20px;
+  padding: 20px 0 20px;
+}
+
+.footer__button {
+  width: 9vw;
+  height: 7vh;
+  border-radius: 15px;
+}
+
 /*-----------------------------ITEMPAGE------------------------------------*/
 
 .item-page__block-img {
