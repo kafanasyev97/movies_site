@@ -1,9 +1,31 @@
 import { Link, Outlet } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 import AuthorizationIcon from './AuthorizationIcon'
 import Navigation from './Navigation'
 import Search from './Search'
+import Footer from '../FooterComponents/Footer'
+import { useAppDispatch } from '../../../store/hooks'
+import {
+  fetchCartoons,
+  fetchMovies,
+  fetchSerials,
+} from '../../../store/itemsSlice'
 
 const Header = () => {
+  const dispatch = useAppDispatch()
+
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const fetchData = async () => {
+      await dispatch(fetchMovies())
+      await dispatch(fetchSerials())
+      await dispatch(fetchCartoons())
+      setLoading(false)
+    }
+    fetchData()
+  }, [dispatch])
+
   return (
     <>
       <header className="header">
@@ -24,7 +46,12 @@ const Header = () => {
           </div>
         </div>
       </header>
-      <Outlet />
+      {!loading && (
+        <>
+          <Outlet />
+          <Footer />
+        </>
+      )}
     </>
   )
 }
