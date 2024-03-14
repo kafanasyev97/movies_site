@@ -252,5 +252,54 @@ a {
 .footer__button {
   width: 9vw;
   height: 7vh;
+  border: none;
   border-radius: 15px;
+  cursor: pointer;
+}
+
+/*-----------------------------MODAL------------------------------------*/
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 3000;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s, visibility 0.4s;
+}
+
+.modal__box {
+  max-width: 500px;
+  padding: 45px;
+  z-index: 1;
+  background-color: white;
+  color: black;
+  transform: scale(0);
+  transition: transform 0.6s;
+  /* position: relative; */
+}
+
+.modal.open {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal.open .modal__box {
+  transform: scale(1);
+}
+
+.modal__img-close {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
 }
