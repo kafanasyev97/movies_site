@@ -1,12 +1,11 @@
 type Props = {
-  className: any
   onClose: any
   children: any
 }
 
-const Modal = ({ className, onClose, children }: Props) => {
+const Modal = ({ onClose, children }: Props) => {
   return (
-    <div className={className}>
+    <div className="modal">
       <div className="modal__box">
         <img
           onClick={onClose}

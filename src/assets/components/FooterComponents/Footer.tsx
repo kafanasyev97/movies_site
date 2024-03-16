@@ -18,15 +18,13 @@ const Footer = () => {
           <button onClick={openModal} className="footer__button">
             Написать
           </button>
-          {createPortal(
-            <Modal
-              className={isModalOpen ? 'modal open' : 'modal'}
-              onClose={closeModal}
-            >
-              <h2>Тестовый вариант! Скоро будет нормальная форма!</h2>
-            </Modal>,
-            modal
-          )}
+          {isModalOpen &&
+            createPortal(
+              <Modal onClose={closeModal}>
+                <h2>Тестовый вариант! Скоро будет нормальная форма!</h2>
+              </Modal>,
+              modal
+            )}
         </div>
       </div>
     </div>
