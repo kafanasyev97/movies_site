@@ -1,8 +1,12 @@
 import { useState } from 'react'
 import Modal from '../Modal/Modal'
+import { createPortal } from 'react-dom'
 
 const Footer = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const modal = document.getElementById('modal')
+  if (!modal) return null
+
   const openModal = () => setIsModalOpen(true)
   const closeModal = () => setIsModalOpen(false)
 
@@ -14,12 +18,15 @@ const Footer = () => {
           <button onClick={openModal} className="footer__button">
             Написать
           </button>
-          <Modal
-            className={isModalOpen ? 'modal open' : 'modal'}
-            onClose={closeModal}
-          >
-            <h2>Шутка! Иди отсюда!</h2>
-          </Modal>
+          {createPortal(
+            <Modal
+              className={isModalOpen ? 'modal open' : 'modal'}
+              onClose={closeModal}
+            >
+              <h2>Тестовый вариант! Скоро будет нормальная форма!</h2>
+            </Modal>,
+            modal
+          )}
         </div>
       </div>
     </div>
