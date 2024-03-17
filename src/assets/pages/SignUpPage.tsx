@@ -1,10 +1,14 @@
-import Form from '../components/RegistrationComponents/Form'
+import { Link } from 'react-router-dom'
+import SignUp from '../components/RegistrationComponents/SignUp'
 
 const SignUpPage = () => {
   return (
     <div>
       <h1>Register page</h1>
-      <Form buttonText="Регистрация" />
+      <SignUp />
+      <p>
+        Already have an account? <Link to="/login">Login</Link>
+      </p>
     </div>
   )
 }

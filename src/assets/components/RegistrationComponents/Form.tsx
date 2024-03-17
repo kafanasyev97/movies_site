@@ -2,11 +2,16 @@ import { useState } from 'react'
 
 type FormProps = {
   buttonText: string
+  handleClick: (email: string, password: string) => void
 }
 
-const Form = ({ buttonText }: FormProps) => {
+const Form = ({ buttonText, handleClick }: FormProps) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const onClickButton = (e: any) => {
+    handleClick(email, password)
+    e.preventDefault()
+  }
 
   return (
     <form>
@@ -29,7 +34,7 @@ const Form = ({ buttonText }: FormProps) => {
           type="password"
         />
       </div>
-      <button>{buttonText}</button>
+      <button onClick={onClickButton}>{buttonText}</button>
     </form>
   )
 }
