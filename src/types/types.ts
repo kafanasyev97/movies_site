@@ -13,3 +13,9 @@ export type ItemList = {
   serials: Item[]
   cartoons: Item[]
 }
+
+export type User = {
+  email: string | null
+  token: string | null
+  id: string | null
+}
