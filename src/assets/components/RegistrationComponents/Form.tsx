@@ -14,10 +14,11 @@ const Form = ({ buttonText, handleClick }: FormProps) => {
   }
 
   return (
-    <form>
-      <div>
+    <form className="user-form">
+      <div className="user-form__fields">
         <label htmlFor="email"></label>
         <input
+          className="user-form__input"
           id="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -27,6 +28,7 @@ const Form = ({ buttonText, handleClick }: FormProps) => {
 
         <label htmlFor="password"></label>
         <input
+          className="user-form__input"
           id="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
@@ -34,7 +36,9 @@ const Form = ({ buttonText, handleClick }: FormProps) => {
           type="password"
         />
       </div>
-      <button onClick={onClickButton}>{buttonText}</button>
+      <button className="user-form__button" onClick={onClickButton}>
+        {buttonText}
+      </button>
     </form>
   )
 }
