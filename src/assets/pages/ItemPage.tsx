@@ -1,7 +1,16 @@
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { useAppSelector } from '../../store/hooks'
+import { useAuth } from '../userHooks/useAuth'
+import { useEffect } from 'react'
 
 const ItemPage = () => {
+  const { isAuth } = useAuth()
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (!isAuth) navigate('/login')
+  }, [navigate, isAuth])
+
   const movies = useAppSelector((state) => state.items.movies)
   const serials = useAppSelector((state) => state.items.serials)
   const cartoons = useAppSelector((state) => state.items.cartoons)
